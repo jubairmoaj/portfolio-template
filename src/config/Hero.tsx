@@ -55,7 +55,7 @@ export const skillComponents = {
 export const heroConfig = {
   // Personal Information
   name: 'Jubair Moaj',
-  subtitle: 'Professional software engineer skilled in Android, iOS, and web development. Currently a 4th-year B.Sc. CSE student at Southeast University, building clean, high-performance apps and modern digital solutions.',
+  subtitle: 'Software engineer skilled in Android, iOS, and web development. Currently a 4th-year B.Sc. CSE student at Southeast University, building clean, high-performance apps and modern digital solutions.',
   avatar: '/assets/jubair.jpg',
 
   // Affiliations/Roles Configuration
