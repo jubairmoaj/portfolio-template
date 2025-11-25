@@ -53,8 +53,8 @@ export const skillComponents = {
 
 export const heroConfig = {
   // Personal Information
-  name: 'Ram',
-  title: 'A Full Stack web developer.',
+  name: 'Jubair Moaj',
+ // title: 'A Full Stack web developer.',
   avatar: '/assets/logo.png',
 
   // Skills Configuration
@@ -89,7 +89,7 @@ export const heroConfig = {
   // Description Configuration
   description: {
     template:
-      'I build interactive web apps using {skills:0}, {skills:1}, {skills:2}, {skills:3} and {skills:4}. With a focus on <b>UI</b> design. Enthusiastic about <b>Three.js</b>, driven by a keen eye for design.',
+      'a software engineer skilled in Android, iOS, and web development. Currently a 4th-year B.Sc. CSE student at Southeast University, building clean, high-performance apps and modern digital solutions.',
   },
 
   // Buttons Configuration
