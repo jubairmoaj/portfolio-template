@@ -9,19 +9,23 @@ import Work from '@/components/landing/Projects';
 import Setup from '@/components/landing/Setup';
 import Journey from '@/components/landing/Journey';
 import React from 'react';
+//      <Setup />
+//<Journey />
+//  <CTA />
+//   <About />
+//  <Blog />
 
 export default function page() {
   return (
     <Container className="min-h-screen py-16">
       <Hero />
       <Experience />
-      <Work />
-      <About />
       <Github />
-      <Blog />
-      <CTA />
-      <Setup />
-      <Journey />
+      <Work />
+   
+    
+    
+    
     </Container>
   );
 }

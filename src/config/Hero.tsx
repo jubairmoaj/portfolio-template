@@ -55,7 +55,7 @@ export const heroConfig = {
   // Personal Information
   name: 'Jubair Moaj',
  // title: 'A Full Stack web developer.',
-  avatar: '/assets/logo.png',
+  avatar: '/assets/jubair.jpg',
 
   // Skills Configuration
   skills: [
