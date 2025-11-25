@@ -1,5 +1,5 @@
 export const footerConfig = {
-  developer: 'Ramxcodes',
-  text: 'Design & Developed by',
+  developer: 'Jubair Moaj',
+  text: '',
   copyright: 'All rights reserved.',
 };

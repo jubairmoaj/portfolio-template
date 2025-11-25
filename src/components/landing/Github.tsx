@@ -4,7 +4,7 @@ import { githubConfig } from '@/config/Github';
 import { useTheme } from 'next-themes';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Container from '../common/Container';
 import GithubIcon from '../svgs/Github';
@@ -49,6 +49,7 @@ export default function Github() {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const { theme } = useTheme();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -118,6 +119,66 @@ export default function Github() {
     fetchData();
   }, []);
 
+  // Scroll to the right (most recent activity) after contributions are loaded
+  useEffect(() => {
+    if (!isLoading && contributions.length > 0 && scrollContainerRef.current) {
+      // Function to scroll to the right
+      const scrollToRight = () => {
+        if (scrollContainerRef.current) {
+          const container = scrollContainerRef.current;
+          // Find the actual scrollable element (might be nested)
+          const scrollableElement =
+            container.querySelector('[style*="overflow"]') ||
+            container.querySelector('svg')?.parentElement ||
+            container;
+
+          if (scrollableElement instanceof HTMLElement) {
+            const maxScroll =
+              scrollableElement.scrollWidth - scrollableElement.clientWidth;
+            if (maxScroll > 0) {
+              scrollableElement.scrollLeft = maxScroll;
+            }
+          }
+
+          // Also try scrolling the container itself
+          const maxScroll = container.scrollWidth - container.clientWidth;
+          if (maxScroll > 0) {
+            container.scrollLeft = maxScroll;
+          }
+        }
+      };
+
+      // Use requestAnimationFrame to ensure DOM is ready
+      requestAnimationFrame(() => {
+        scrollToRight();
+        // Try multiple times with delays to catch late renders
+        setTimeout(scrollToRight, 100);
+        setTimeout(scrollToRight, 300);
+        setTimeout(scrollToRight, 600);
+        setTimeout(scrollToRight, 1000);
+      });
+
+      // Use MutationObserver to detect when the calendar content is added
+      const observer = new MutationObserver(() => {
+        requestAnimationFrame(scrollToRight);
+      });
+
+      if (scrollContainerRef.current) {
+        observer.observe(scrollContainerRef.current, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['style'],
+        });
+
+        // Cleanup observer after 2 seconds
+        setTimeout(() => {
+          observer.disconnect();
+        }, 2000);
+      }
+    }
+  }, [isLoading, contributions]);
+
   return (
     <Container className="mt-20">
       <div className="space-y-6">
@@ -174,7 +235,10 @@ export default function Github() {
         ) : (
           <div className="relative overflow-hidden">
             <div className="relative bg-background/50 backdrop-blur-sm rounded-lg border border-dashed dark:border-white/10 border-black/20 p-6">
-              <div className="w-full overflow-x-auto ">
+              <div
+                ref={scrollContainerRef}
+                className="w-full overflow-x-auto"
+              >
                 <ActivityCalendar
                   data={contributions}
                   blockSize={12}

@@ -23,6 +23,7 @@
  *
  * That's it! Your portfolio will automatically update with your information.
  */
+import Facebook from '@/components/svgs/Facebook';
 import Github from '@/components/svgs/Github';
 import LinkedIn from '@/components/svgs/LinkedIn';
 import Mail from '@/components/svgs/Mail';
@@ -54,10 +55,13 @@ export const skillComponents = {
 export const heroConfig = {
   // Personal Information
   name: 'Jubair Moaj',
- // title: 'A Full Stack web developer.',
+  subtitle: 'Professional software engineer skilled in Android, iOS, and web development. Currently a 4th-year B.Sc. CSE student at Southeast University, building clean, high-performance apps and modern digital solutions.',
   avatar: '/assets/jubair.jpg',
 
-  // Skills Configuration
+  // Affiliations/Roles Configuration
+
+
+  // Skills Configuration (kept for potential future use)
   skills: [
     {
       name: 'Typescript',
@@ -86,49 +90,58 @@ export const heroConfig = {
     },
   ],
 
-  // Description Configuration
-  description: {
-    template:
-      'a software engineer skilled in Android, iOS, and web development. Currently a 4th-year B.Sc. CSE student at Southeast University, building clean, high-performance apps and modern digital solutions.',
-  },
-
   // Buttons Configuration
   buttons: [
-    {
-      variant: 'outline',
-      text: 'Resume / CV',
-      href: '/resume',
-      icon: 'CV',
-    },
-    {
-      variant: 'default',
-      text: 'Get in touch',
-      href: '/contact',
-      icon: 'Chat',
-    },
+    // {
+    //   variant: 'outline',
+    //   text: 'Resume / CV',
+    //   href: '/resume',
+    //   icon: 'CV',
+    // },
+    // {
+    //   variant: 'default',
+    //   text: 'Get in touch',
+    //   href: '/contact',
+    //   icon: 'Chat',
+    // },
   ],
+  
 };
 
 // Social Links Configuration
 export const socialLinks = [
   {
-    name: 'X',
-    href: 'https://x.com/ramxcodes',
-    icon: <X />,
-  },
-  {
     name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/ramxcodes/',
-    icon: <LinkedIn />,
+    href: 'https://www.linkedin.com/in/jubairmoaj',
+    icon: 'LinkedIn',
   },
   {
     name: 'Github',
-    href: 'https://github.com/ramxcodes',
-    icon: <Github />,
+    href: 'https://github.com/jubairmoaj',
+    icon: 'Github',
+  },
+  {
+    name: 'X',
+    href: 'https://x.com/J_Moaj',
+    icon: 'X',
+  },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/Jubair.XD/',
+    icon: 'Facebook',
   },
   {
     name: 'Email',
-    href: 'mailto:ramxcodes@gmail.com',
-    icon: <Mail />,
+    href: 'mailto:jubairmoaj71@gmail.com',
+    icon: 'Mail',
   },
 ];
+
+// Icon component mapping
+export const socialIconComponents = {
+  LinkedIn,
+  Github,
+  X,
+  Facebook,
+  Mail,
+};

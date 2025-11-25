@@ -1,27 +1,30 @@
 export const quotes = [
   {
-    quote: `A man who is master of patience is master of everything else.`,
-    author: 'George Savile',
+    quote: `So verily, with hardship comes ease.`,
+    author: 'Qur’an 94:6',
   },
   {
-    quote: `You have a right to perform your prescribed duty, but you are not
-            entitled to the fruits of actions.`,
-    author: 'Bhagavad Gita',
+    quote: `And He found you lost and guided you.`,
+    author: 'Qur’an 93:7',
   },
   {
-    quote: `Man is made by his belief. As he believes, so he is.`,
-    author: 'Bhagavad Gita',
+    quote: `Remember Me; I will remember you.`,
+    author: 'Qur’an 2:152',
   },
   {
-    quote: `Arise, awake, and stop not till the goal is reached.`,
-    author: 'Katha Upanishad',
+    quote: `Indeed, Allah is with the patient.`,
+    author: 'Qur’an 2:153',
   },
   {
-    quote: `If the pain doesn't kill me, it will only make me stronger.`,
-    author: 'Sung Jin-Woo, Solo Leveling',
+    quote: `Do not despair of the mercy of Allah.`,
+    author: 'Qur’an 39:53',
   },
   {
-    quote: `I’ll take a potato chip… AND EAT IT!`,
-    author: 'Light Yagami, Death Note',
+    quote: `And whoever relies upon Allah, then He is sufficient for him.`,
+    author: 'Qur’an 65:3',
+  },
+  {
+    quote: `Indeed, Allah does not burden a soul beyond what it can bear.`,
+    author: 'Qur’an 2:286',
   },
 ];
